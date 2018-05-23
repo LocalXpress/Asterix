@@ -1,102 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-
-    <title>DASHGUM - FREE Bootstrap Admin Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
-    
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style-responsive.css" rel="stylesheet">
-
-    <script src="assets/js/chart-master/Chart.js"></script>
-    <style type="text/css">
-      .side_links
-      {
-        background-color: red;
-        border-radius: 7px;
-        margin-top: 25px;
-      }
-
-    </style>
+    <?php
+      include 'script/head_imp_file.php';
+    ?>
   </head>
 
   <body onload="generateCaptcha();">
 
   <section id="container" >
-      <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
-      <!--header start-->
-      <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <!--logo start-->
-            <a href="index.html" class="logo"><b>ASTERIX GOLD</b></a>
-            <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="#">Quit</a></li>
-            	</ul>
-            </div>
-
-        </header>
-      <!--header end-->
-      
-      <!-- **********************************************************************************************************************************************************
-      MAIN SIDEBAR MENU
-      *********************************************************************************************************************************************************** -->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-
-                <p class="centered"><a href="profile.html"><img src="assets/img/ui-danro.jpg" class="img-circle" width="60"></a></p>
-                <h5 class="centered">ASTERIX GOLD</h5>
-
-                  <li class="mt">
-                      <a class="active" href="#">
-                          <i class="li_pen"></i>
-                          <span>Basic Information</span>
-                      </a>
-                  </li>
-
-                  <li class="mt">
-                      <a class="active" href="index.html">
-                          <i class="li_pen"></i>
-                          <span>Detailed Information</span>
-                      </a>
-                  </li>
-
-                  <li class="mt">
-                      <a class="active" href="index.html">
-                          <i class="li_pen"></i>
-                          <span>Picture Upload</span>
-                      </a>
-                  </li>
-
-                  <li class="mt">
-                      <a class="active" href="index.html">
-                          <i class="li_pen"></i>
-                          <span>Payment</span>
-                      </a>
-                  </li>
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
+  <?php
+    include 'script/master_reg_nav.php';
+    include 'script/master_reg_side_nav.php';
+  ?>    
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -169,26 +85,9 @@
 
       <!--main content end-->
   </section>
-
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/jquery-1.8.3.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.sparkline.js"></script>
-
-
-    <!--common script for all pages-->
-    <script src="assets/js/common-scripts.js"></script>
-    
-    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
-
-    <!--script for this page-->
-    <script src="assets/js/sparkline-chart.js"></script>    
-	  <script src="assets/js/zabuto_calendar.js"></script>	
+<?php
+  include 'script/tail_imp_file.php';
+?>
     <script type="text/javascript">
          function generateCaptcha()
          {

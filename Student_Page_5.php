@@ -64,6 +64,7 @@
 
   <?php
     include 'script/tail_imp_file.php';
+    include 'script/footer.php';
   ?>	
 
   </body>

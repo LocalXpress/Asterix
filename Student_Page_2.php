@@ -20,28 +20,69 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-              <h3><i class="fa fa-angle-right"></i> STUDENT PROFILE</h3><hr>
+            <h3><i class="fa fa-angle-right"></i> STUDENT PROFILE</h3><hr>
               <div class="row mt">
-                
-                <div class="col-lg-12 main-chart">
-                  <div class="showback"> 
-                    <h4><i class="fa fa-angle-right"></i>Basic Profile</h4>
-                    <b>NAME:</b>  Swaroop Acharjee<br>
-                    <b>CLASS:</b> XII<br> 
-                    <b>SCHOOL:</b> KV Ballygunge<br>
-                    <b>ADDRESS:</b>Narendrapur<br>
-                    <b>STUDENT PHONE NUMBER:</b> 1548053498590<br>
-                    <b>PARENTS PHONE NUMBER:</b> 495834905894305<br>
-                    <b>EMAIL ADDRESS:</b> something@gmail.com<br>
-                    <b>SUBJECT:</b> Some Subject<br>
-                    <b>INSTRUCTOR:</b> Swaroop Acharjee <br>
-                    <center><button class="btn btn-primary">Print</button></center>
+
+                <div class="col-lg-3 main-chart">
+                  <div class="showback">
+                    <p class="centered"><img src="assets/img/ui-zac.jpg" class="img-circle" width="155"></p>
+                    <p class="centered">
+                      <button type="button" class="btn btn-default btn-xs btn-theme02">View Profile</button>
+                      <button type="button" class="btn btn-default btn-xs btn-theme03">Transaction History</button>
+                    </p>
                   </div>
-                </div>  
+                </div>
+
+                <div class="col-lg-9 main-chart">
+                  <div class="showback">
+                    <!--Table-->
+                      <table class="table table-bordered">
+                      <!--Table body-->
+                      <tbody>
+                          <tr>
+                              <th colspan = "2"><b style="color:#4c90ff;">FULL NAME</b></th>
+                              <td colspan = "1">SWAROOP ACHARJEE</td>
+                              <td colspan = "1"><b style="color:#4c90ff;">REG ID: </b></td>
+                              <td colspan = "1">123</td>
+                          </tr>
+                          <tr>
+                              <th>1</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                              <td>@mdo</td>
+                          </tr>
+                          <tr>
+                              <th>2</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@TwBootstrap</td>
+                              <td>@mdo</td>
+                          </tr>
+                          <tr>
+                              <th>3</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                              <td>@mdo</td>
+                          </tr>
+                          <tr>
+                              <th>4</th>
+                              <td colspan="3">Larry the Bird</td>
+                              <td>@mdo</td>
+                          </tr>
+                      </tbody>
+                      <!--Table body-->
+
+                  </table>
+                  <!--Table-->
+                  </div>
+                </div>
+
+              </div>  
            
                 
 
-              </div>
 
               <div class="row mt">
                 <div class="col-lg-12 main-chart">
@@ -102,6 +143,7 @@
       <!--main content end-->
   </section>
   <?php
+    include 'script/footer.php';
     include 'script/tail_imp_file.php';
   ?>
   </body>

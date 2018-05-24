@@ -3,6 +3,11 @@
   <head>
     <?php
       include 'script/head_imp_file.php';
+      include 'php/function_php.php';
+
+      //function is called from here!!!!
+      if(isset($_POST['update_display_pic']))
+        update_display_picture(6,$_FILES);
     ?>
     <style type="text/css">
     .btn-file 
@@ -66,28 +71,26 @@ MAIN CONTENT
 
                     <h5>Picture</h5><hr>
 
-                    <form class="form-horizontal style-form" method="get">
+                    <form class="form-horizontal style-form" action="" method="post" enctype="multipart/form-data">
                           <div class="form-group">
-
                             <div class="col-sm-12">  
                               <label>Upload Image</label>
-        <div class="input-group">
-            <span class="input-group-btn">
-                <span class="btn btn-default btn-file">
-                    Browse… <input type="file" id="imgInp">
-                </span>
-            </span>
-            <input type="text" class="form-control" readonly>
-        </div>
-        <img id='img-upload'/>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <span class="btn btn-default btn-file">
+                                            Browse… <input type="file" id="imgInp" name="update_display_pic" value="">
+                                        </span>
+                                    </span>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                <img id='img-upload'/>
                             </div>
-
                               <div class="col-sm-9" style="margin-top:1%;">
                                 <div id="img_ch"></div>
                               </div>
                               <div class="col-sm-3" style="margin-top:1%;">
-                                  <button type="button" class="btn btn-default">Reset</button>
-                                  <button type="button" class="btn btn-primary">Next</button>
+                                  <input  type="reset" id="reset"   name="reset_display_pic"  value="RESET"  class="btn btn-default"/>
+                                  <input  type="submit" id="submit" name="update_display_pic" value="UPDATE" class="btn btn-primary"/>
                               </div>
 
                           </div>

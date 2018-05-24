@@ -3,6 +3,9 @@
   <head>
     <?php
       include 'script/head_imp_file.php';
+      include 'php/function_php.php';
+      if(isset($_POST['registration_step_1']))
+        registration_1($_POST['email'],$_POST['fname'],$_POST['mname'],$_POST['lname'],$_POST['password']);
     ?>
   </head>
 
@@ -34,24 +37,33 @@
 
                     <h5>Basic Information</h5><hr>
 
-                    <form class="form-horizontal style-form" method="get">
+                    <form class="form-horizontal style-form" action="" method="post" enctype="multipart/form-data">
                           <div class="form-group">
+                              <!--
+                              **********************************************************************************************************
+                              START FIRST NAME, MIDDLE NAME AND LAST NAME IS TAKEN AS INPUT HERE
+                              **********************************************************************************************************
+                              -->
                               <div class="col-sm-4">
-                                  <input type="text" class="form-control" placeholder="First Name">
+                                  <input type="text" class="form-control" placeholder="First Name"  id="fname"   name="fname"   value="">
                               </div>
                               <div class="col-sm-4">
-                                  <input type="text" class="form-control" placeholder="Middle Name">
+                                  <input type="text" class="form-control" placeholder="Middle Name" id="mname"   name="mname"   value="">
                               </div>
                               <div class="col-sm-4">
-                                  <input type="text" class="form-control" placeholder="Last Name">
+                                  <input type="text" class="form-control" placeholder="Last Name"   id="lname"   name="lname"   value="">
                               </div>
-
+                              <!--
+                              **********************************************************************************************************
+                              EMAIL ID AND PASSWORD IS TAKEN AS INPUT HERE
+                              **********************************************************************************************************
+                              -->
                               <div class="col-sm-12" style="margin-top:1%;">
-                                  <input type="Email" class="form-control" placeholder="Email ID">
+                                  <input type="Email" class="form-control" placeholder="Email ID"     id="email"      name="email"   value="">
                               </div>
 
                               <div class="col-sm-6" style="margin-top:1%;">
-                                  <input type="password" class="form-control" placeholder="Password">
+                                  <input type="password" class="form-control" placeholder="Password"  id="password"   name="password"   value="">
                               </div>
                               <div class="col-sm-6" style="margin-top:1%;">
                                   <input type="password" class="form-control" placeholder="Confirm Password">
@@ -70,10 +82,9 @@
                               </div>
 
                               <div class="col-sm-3" style="margin-top:1%;">
-                                  <button type="button" class="btn btn-default">Reset</button>
-                                  <button type="button" class="btn btn-primary">Next</button>
+                                  <input  type="reset"  class="btn btn-default" value="RESET"/>
+                                  <input  type="submit" class="btn btn-primary" value="SAVE & NEXT"    id="submit"   name="registration_step_1"/>
                               </div>
-
                           </div>
                     </form>
 

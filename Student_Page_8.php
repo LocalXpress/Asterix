@@ -3,6 +3,14 @@
   <head>
     <?php
       include 'script/head_imp_file.php';
+      include 'php/function_php.php';
+      $stud_id=$_GET['stud_id'];
+      
+      if(!isset($stud_id))
+        header("location:Student_Page_7.php");
+
+      if(isset($_POST['registration_step_2']))
+        registration_2($stud_id,$_POST['moth_name'],$_POST['fath_name'],$_POST['g_phone'],$_POST['p_phone'],$_POST['board'],$_POST['school'],$_POST['class'],$_POST['teacher'],$_POST['sub_1'],$_POST['sub_2'],$_POST['sub_3'],$_POST['sub_4'],$_POST['addr'],$_POST['fee']);
     ?>
   </head>
 
@@ -33,61 +41,61 @@
 
                     <h5>Detailed Information</h5><hr>
 
-                    <form class="form-horizontal style-form" method="get">
+                    <form class="form-horizontal style-form" action="" method="post" enctype="multipart/form-data">
                           <div class="form-group">
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control" placeholder="Mother's Name">
+                                  <input type="text" class="form-control" placeholder="Mother's Name"                   id="moth_name"      name="moth_name"   value="">
                               </div>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control" placeholder="Father's Name">
+                                  <input type="text" class="form-control" placeholder="Father's Name"                   id="fath_name"      name="fath_name"   value="">
                               </div>
                             
                               <div class="col-sm-6" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Gardian's Phone Number">
+                                  <input type="text" class="form-control" placeholder="Gardian's Phone Number"          id="g_phone"        name="g_phone"     value="">
                               </div>
 
                               <div class="col-sm-6" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Personal Phone Number (If Any)">
+                                  <input type="text" class="form-control" placeholder="Personal Phone Number (If Any)"  id="p_phone"        name="p_phone"     value="">
                               </div>
 
                               <div class="col-sm-4" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Board">
+                                  <input type="text" class="form-control" placeholder="Board"                           id="board"          name="board"      value="">
                               </div>
                               <div class="col-sm-4" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="School">
+                                  <input type="text" class="form-control" placeholder="School"                          id="school"         name="school"     value="">
                               </div>
                               <div class="col-sm-4" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Class">
+                                  <input type="text" class="form-control" placeholder="Class"                           id="class"          name="class"      value="">
                               </div>
 
                               <div class="col-sm-3" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Subject 1">
+                                  <input type="text" class="form-control" placeholder="Subject 1"                       id="sub_1"          name="sub_1"      value="">
                               </div>
                               <div class="col-sm-3" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Subject 2">
+                                  <input type="text" class="form-control" placeholder="Subject 2"                       id="sub_2"          name="sub_2"      value="">
                               </div>
                               <div class="col-sm-3" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Subject 3">
+                                  <input type="text" class="form-control" placeholder="Subject 3"                       id="sub_3"          name="sub_3"      value="">
                               </div>
                               <div class="col-sm-3" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Subject 4">
+                                  <input type="text" class="form-control" placeholder="Subject 4"                       id="sub_4"          name="sub_4"      value="">
                               </div>
 
                               <div class="col-sm-12" style="margin-top:1%;">
-                        <textarea class="form-control" id="exampleFormControlTextarea3" row="10" style="min-height:200px;" placeholder="Residential Address"></textarea>
+<textarea class="form-control" row="10" style="min-height:200px;" placeholder="Residential Address"                     id="addr"           name="addr"       value=""></textarea>
                               </div>
 
                               <div class="col-sm-6" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Instructor">
+                                  <input type="text" class="form-control" placeholder="Instructor"                      id="teacher"        name="teacher"   value="">
                               </div>
                               <div class="col-sm-6" style="margin-top:1%;">
-                                  <input type="text" class="form-control" placeholder="Total Fees">
+                                  <input type="text" class="form-control" placeholder="Total Fees"                      id="fee"            name="fee"       value="">
                               </div>
 
                               <div class="col-sm-9" style="margin-top:1%;"></div>
                               <div class="col-sm-3" style="margin-top:1%;">
-                                  <button type="button" class="btn btn-default">Reset</button>
-                                  <button type="button" class="btn btn-primary">Next</button>
+                                  <input type="reset" class="btn btn-default"   value="RESET"/>
+                                  <input type="submit" class="btn btn-primary"/ value="SAVE & NEXT" id="submit" name="registration_step_2"/>
                               </div>
 
                           </div>

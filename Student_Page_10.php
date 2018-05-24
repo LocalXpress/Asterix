@@ -3,6 +3,10 @@
   <head>
   <?php
     include 'script/head_imp_file.php';
+    include 'php/function_php.php';
+    $stud_id=$_GET['stud_id'];
+    if(!isset($stud_id))
+        header("location:Student_Page_7.php");
   ?>
     <style type="text/css">
      #payment_success
@@ -34,7 +38,7 @@
                 <h3 style="margin-left:1%;">Registration</h3><hr style="margin-left:1%;">
                 <div class="col-lg-12 main-chart">
 
-                  <div class="showback">
+                  <div class="showback" id="cash_payment_buttons">
                     <h4><i class="fa fa-angle-right"></i><b>Step 4</b></h4>
 
                     <div class="progress progress-striped">
@@ -44,9 +48,8 @@
 
                     <h5>Registration Fees</h5><hr>
 
-                      <button type="button" class="btn btn-primary btn-lg btn-block">Pay with Card</button>
-                      <button type="button" class="btn btn-info btn-lg btn-block" onclick="cash_js();">Pay with Cash</button>
-
+                      <button type="button" class="btn btn-primary btn-lg btn-block"  onclick="cash_ss();" disabled>Pay with Card</button>
+                      <button type="button" class="btn btn-info btn-lg btn-block"     onclick="cash_js();">Pay with Cash</button>
                   </div>
 
                   <div class="showback" id="cash_admin" style="display:none;">
@@ -56,7 +59,7 @@
                                   <input type="password" class="form-control" placeholder="Admin Password" id="admin_password">
                               </div>
                               <div class="col-sm-4">
-                                  <input type="text" class="form-control" placeholder="cost">
+                                  <input type="text" class="form-control" placeholder="cost" value="500" readonly>
                               </div>
                               <div class="col-sm-4">
                                   <button type="button" class="btn btn-theme02" onclick="cash_confirm();"><i class="fa fa-check"></i>Confirm Payment</button>
@@ -106,6 +109,7 @@
         var y = document.getElementById("cash_admin");
         var z = document.getElementById("payment_unsuccess");
         var p = document.getElementById("admin_password").value;
+        var t = document.getElementById("cash_payment_buttons");
         /*
         ========================================================
         ADMIN PASSWORD IS UPDATED IN THIS PLACE
@@ -113,8 +117,10 @@
         */
         if(p=="abcd")
         {
+          var g     =   <?php echo json_encode(registration_4($stud_id), JSON_PRETTY_PRINT);?>;
           x.style.display = "block";
           y.style.display = "none";
+          t.style.display = "none";
         }
         else
         {
@@ -127,6 +133,10 @@
         document.getElementById("payment_success").style.display  = "none"; 
         document.getElementById("cash_admin").style.display  = "none";;
         document.getElementById("payment_unsuccess").style.display  = "none";;
+      }
+      function cash_ss()
+      {
+        window.alert("Hello");
       }
     </script>
   </body>

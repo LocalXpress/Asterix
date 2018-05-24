@@ -4,10 +4,13 @@
     <?php
       include 'script/head_imp_file.php';
       include 'php/function_php.php';
+      $stud_id=$_GET['stud_id'];
+      if(!isset($stud_id))
+        header("location:Student_Page_7.php");
 
       //function is called from here!!!!
       if(isset($_POST['update_display_pic']))
-        update_display_picture(6,$_FILES);
+        registration_3($stud_id,$_FILES);
     ?>
     <style type="text/css">
     .btn-file 
@@ -90,7 +93,7 @@ MAIN CONTENT
                               </div>
                               <div class="col-sm-3" style="margin-top:1%;">
                                   <input  type="reset" id="reset"   name="reset_display_pic"  value="RESET"  class="btn btn-default"/>
-                                  <input  type="submit" id="submit" name="update_display_pic" value="UPDATE" class="btn btn-primary"/>
+                                  <input  type="submit" id="submit" name="update_display_pic" value="SAVE & NEXT" class="btn btn-primary"/>
                               </div>
 
                           </div>

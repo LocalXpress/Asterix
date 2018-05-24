@@ -50,7 +50,7 @@
 		            <hr>
 		            
 		            <div class="registration">Don't have an account yet?<br/>
-		                <a class="" href="#">Create an account</a>
+		                <a class="" href="Student_Page_7.php">Create an account</a>
 		            </div>
 		
 		        </div>

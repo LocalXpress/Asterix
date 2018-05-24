@@ -9,6 +9,13 @@ MAIN SIDEBAR MENU
 
     <p class="centered"><a href="profile.html"><img src="assets/img/ui-danro.jpg" class="img-circle" width="60"></a></p>
     <h5 class="centered">ASTERIX GOLD</h5>
+      
+      <li class="mt">
+        <a class="active" href="#">
+          <i class="li_pen"></i>
+            <span>Privacy Policies</span>
+        </a>
+      </li>
 
       <li class="mt">
         <a class="active" href="Student_Page_7.php">

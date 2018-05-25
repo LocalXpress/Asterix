@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  	<?php
+  		include 'php/function_php.php';
+  		session_start();
+
+  		if(isset($_POST['login_check']))
+      	{
+	        $_SESSION['stud_id']	=	login_check($_POST['email'],$_POST['password']);
+	        if($_SESSION['stud_id']!=0)
+	          	header("Location:Student_Page_1.php");
+	        else
+	          	header("Location:index.php");
+      	}
+  	?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Asterix</title>
+    <title>ASTERIX GOLD</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -34,21 +47,22 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="index.html">
+		    <form class="form-login" action="" method="post" enctype="multipart/form-data">
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
-		            <input type="email" class="form-control" placeholder="Email ID" autofocus>
+		            <input type="email" class="form-control" placeholder="Email ID" autofocus id="email" 	name="email" 	value="">
 		            <br>
-		            <input type="password" class="form-control" placeholder="Password">
-		            <label class="checkbox">
+		            <input type="password" class="form-control" placeholder="Password"		  id="password" name="password" value="">
+
+		            <!--<label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
-		
 		                </span>
-		            </label>
-		            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+		            </label>-->
+		            <br>
+		            <input class="btn btn-theme btn-block" type="submit" value"SUBMIT" id="submit" name="login_check"/>
 		            <hr>
-		            
+		    </form>
 		            <div class="registration">Don't have an account yet?<br/>
 		                <a class="" href="Student_Page_7.php">Create an account</a>
 		            </div>

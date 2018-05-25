@@ -5,8 +5,14 @@
     include 'script/head_imp_file.php';
   ?>
   </head>
-
-  <body onload="getTime()">
+  <script type="text/javascript">
+  function onload_required_function()
+  {
+    getTime();
+    info();
+  }
+  </script>
+  <body onload="onload_required_function();">
 
   <section id="container" >
   <?php

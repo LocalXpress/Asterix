@@ -5,9 +5,14 @@
       include 'script/head_imp_file.php';
     ?>
   </head>
-
-  <body>
-
+  <script type="text/javascript">
+  function onload_required_function()
+  {
+    info();
+  }
+  </script>
+  <body onload='onload_required_function();'>
+    
   <section id="container" >
   <?php
     include 'script/master_nav.php';

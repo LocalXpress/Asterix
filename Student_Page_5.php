@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <?php
-      include 'script/head_imp_file.php';
-  ?>
-</head>
-
-  <body>
+  <head>
+    <?php
+        include 'script/head_imp_file.php';
+    ?>
+  </head>
+  <script type="text/javascript">
+  function onload_required_function()
+  {
+    info();
+  }
+  </script>
+  <body onload='onload_required_function();'>
 
   <section id="container" >
   <?php

@@ -8,7 +8,7 @@
 <!--footer start-->
     <footer class="site-footer">
         <p class="centered">
-            &copy;Swaroop Acharjee 2018
+            &copy;
         </p>
     </footer>
 <!--footer end-->

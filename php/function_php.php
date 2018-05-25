@@ -92,4 +92,24 @@
 			//echo "done";
 			return 1;
 		}
+
+		function login_check($email,$password)
+		{
+			//echo $email.' '.$password;
+			$sql="select stud_id from student_basic where email='$email' and password='$password'";
+			$key=0;
+			foreach($GLOBALS['db']->query($sql) as $row) $key++;
+			if($key==1)
+				return $row['stud_id'];
+			else 
+				echo "Compilation is wrong!";
+		}
+
+		function return_student_name($stud_id)
+		{
+			$sql="select fname,mname,lname from student_basic where stud_id=$stud_id";
+			foreach ($GLOBALS['db']->query($sql) as $row) return $row;
+		}
+
+		
 ?>

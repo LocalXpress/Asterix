@@ -1,6 +1,5 @@
 <?php
   include 'php/function_php.php';
-  session_start();
   $stud_id  =   $_SESSION['stud_id'];
   $fname    =   return_student_name($stud_id);
 ?>

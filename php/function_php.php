@@ -65,7 +65,6 @@
 			$GLOBALS['db']->exec($sql);
 			header("location:./Student_Page_9.php?stud_id=".$stud_id);
 		}
-
 		function registration_3($stud_id,$file)
 		{
 			//code to upload the display pictures, the size checking and format checking have to be done.

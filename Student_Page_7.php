@@ -70,7 +70,7 @@
                               </div>
 
                               <div class="col-sm-3" style="margin-top:1%;"> 
-                                  <input type="text"   class="form-control"   id="mainCaptcha"  readonly="readonly"/> 
+                                <input type="text"   class="form-control"   id="mainCaptcha"  readonly="readonly"/> 
                               </div>
 
                               <div class="col-sm-3" style="margin-top:1%;">
@@ -112,7 +112,7 @@
                var d = alpha[Math.floor(Math.random() * alpha.length)];
               }
             var code = a + '' + b + '' + '' + c + '' + d;
-            document.getElementById("mainCaptcha").value = code
+            document.getElementById("mainCaptcha").value =  code;
           }
           function CheckValidCaptcha(){
               var string1 = removeSpaces(document.getElementById('mainCaptcha').value);

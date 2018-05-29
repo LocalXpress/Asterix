@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <?php
+      //Should be put at the start of the each page!
+      session_start();
       include 'script/head_imp_file.php';
+      include 'php/function_2.php';
+      $stud_id  =  $_SESSION['stud_id'];
+
     ?>
   </head>
   <script type="text/javascript">

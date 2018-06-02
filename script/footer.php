@@ -3,6 +3,7 @@
 {
    bottom:0;
    background:#6cf;
+   margin-top: 130px;
 }
 </style>
 <!--footer start-->

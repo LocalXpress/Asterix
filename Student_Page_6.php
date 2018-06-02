@@ -35,7 +35,66 @@
                 <div class="col-lg-12 main-chart">
                   <div class="showback">
                     <h4>Privacy Policies and disclaimers and important questions will be answered here!</h4><br>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    
+                    <div class="panel-group">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"><a data-toggle="collapse" href="#collapse1">Collapsible panel 1</a></h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                          <div class="panel-body">Panel Body</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="panel-group">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"><a data-toggle="collapse" href="#collapse2">Collapsible panel 2</a></h4>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                          <div class="panel-body">Panel Body</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="panel-group">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"><a data-toggle="collapse" href="#collapse3">Collapsible panel 3</a></h4>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse">
+                          <div class="panel-body">Panel Body</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="panel-group">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"><a data-toggle="collapse" href="#collapse4">Collapsible panel 4</a></h4>
+                        </div>
+                        <div id="collapse4" class="panel-collapse collapse">
+                          <div class="panel-body">Panel Body</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="panel-group">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"><a data-toggle="collapse" href="#collapse5">Collapsible panel 5</a></h4>
+                        </div>
+                        <div id="collapse5" class="panel-collapse collapse">
+                          <div class="panel-body">Panel Body</div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+                  </div>
                   </div>	
 					      </div>
               </div>

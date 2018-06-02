@@ -30,9 +30,13 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
+            <!--
+            ********************************************************************************************************************************************************
+            START OF PAYMENT GATEWAY
+            ********************************************************************************************************************************************************
+            -->
               <div class="row">
                 <div class="col-lg-12 main-chart">
-                  
                   <div class="showback">
                     <h4>Pay Your Fees</h4><hr>
                     Name: <b>Swaroop Acharjee</b><br>
@@ -52,87 +56,45 @@
                               </div>
                           </div>
                     </form>
-                  </div><!-- /showback -->
-
-                <! -- 3RD ROW OF PANELS -->
-          <!-- Product Panel -->
-          <div class="row">
-
-            <div class="col-lg-4 col-md-4 col-sm-4 mb">
-              <div class="product-panel-2 pn">
-                <div class="badge badge-hot">HOT</div>
-                <img src="assets/img/product.jpg" width="200" alt="">
-                <h5 class="mt">Flat Pack Heritage</h5>
-                <h6>TOTAL SALES: 1388</h6>
-                <button class="btn btn-small btn-theme04">BUY</button>
+                  </div>
+            <!--
+            ********************************************************************************************************************************************************
+            END OF PAYMENT GATEWAY
+            ********************************************************************************************************************************************************
+            -->
+            <!--
+            ********************************************************************************************************************************************************
+            TRANSACTION TABLE IS PUT HERE
+            ********************************************************************************************************************************************************
+            --> 
+            <div class="row mt">
+              <div class="col-lg-12 main-chart">
+                <div class="showback">
+                  <h3><i class="fa fa-angle-right"></i>TRANSACTION HISTORY</h3><hr>
+                    <table class="table table-bordered table-striped table-condensed">
+                      <thead style="background-color:#002b80; color:white;">
+                        <tr>
+                          <th class="numeric">Order ID</th>
+                          <th class="numeric">Amount</th>
+                          <th class="numeric">Paid for</th>
+                          <th class="numeric">Time</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php get_student_tran($stud_id); ?>
+                      </tbody>
+                    </table>
+                    <center><a href="transaction.php" target="_blank">See More</a></center>
+                </div>
               </div>
-            </div><! --/col-md-4 -->
-
-
-            <div class="col-lg-4 col-md-4 col-sm-4 mb">
-              <div class="product-panel-2 pn">
-                <div class="badge badge-hot">HOT</div>
-                <img src="assets/img/product.jpg" width="200" alt="">
-                <h5 class="mt">Flat Pack Heritage</h5>
-                <h6>TOTAL SALES: 1388</h6>
-                <button class="btn btn-small btn-theme04">BUY</button>
-              </div>
-            </div><! --/col-md-4 -->
-
-
-            <div class="col-lg-4 col-md-4 col-sm-4 mb">
-              <div class="product-panel-2 pn">
-                <div class="badge badge-hot">HOT</div>
-                <img src="assets/img/product.jpg" width="200" alt="">
-                <h5 class="mt">Flat Pack Heritage</h5>
-                <h6>TOTAL SALES: 1388</h6>
-                <button class="btn btn-small btn-theme04">BUY</button>
-              </div>
-            </div><! --/col-md-4 -->
-          
-          </div><! -- END 3RD ROW OF PANELS -->
-
-           <! -- 3RD ROW OF PANELS -->
-          <!-- Product Panel -->
-          <div class="row">
-
-            <div class="col-lg-4 col-md-4 col-sm-4 mb">
-              <div class="product-panel-2 pn">
-                <div class="badge badge-hot">HOT</div>
-                <img src="assets/img/product.jpg" width="200" alt="">
-                <h5 class="mt">Flat Pack Heritage</h5>
-                <h6>TOTAL SALES: 1388</h6>
-                <button class="btn btn-small btn-theme04">BUY</button>
-              </div>
-            </div><! --/col-md-4 -->
-
-
-            <div class="col-lg-4 col-md-4 col-sm-4 mb">
-              <div class="product-panel-2 pn">
-                <div class="badge badge-hot">HOT</div>
-                <img src="assets/img/product.jpg" width="200" alt="">
-                <h5 class="mt">Flat Pack Heritage</h5>
-                <h6>TOTAL SALES: 1388</h6>
-                <button class="btn btn-small btn-theme04">BUY</button>
-              </div>
-            </div><! --/col-md-4 -->
-
-
-            <div class="col-lg-4 col-md-4 col-sm-4 mb">
-              <div class="product-panel-2 pn">
-                <div class="badge badge-hot">HOT</div>
-                <img src="assets/img/product.jpg" width="200" alt="">
-                <h5 class="mt">Flat Pack Heritage</h5>
-                <h6>TOTAL SALES: 1388</h6>
-                <button class="btn btn-small btn-theme04">BUY</button>
-              </div>
-            </div><! --/col-md-4 -->
-          
-          </div><! -- END 3RD ROW OF PANELS -->
-          
-                  				
-					      </div>
-              </div>
+            </div>
+            <!--
+            ********************************************************************************************************************************************************
+            TRANSACTION TABLE ENDS HERE
+            ********************************************************************************************************************************************************
+            -->  
+					    </div>
+            </div>
           </section>
       </section>
 

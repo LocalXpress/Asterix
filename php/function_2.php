@@ -27,10 +27,34 @@
 			return $result;
 		}
 
+		function get_profile_picture($stud_id)
+		{
+			//fetch all can fetch multiple row
+			$sql =	$GLOBALS['db']->prepare("select * from student_pic where stud_id=$stud_id");
+			$sql->execute();
+			$result = $sql->fetchAll();
+			return $result;
+		}
+
 		function get_student_tran($stud_id)
 		{
 			//fetch all can fetch multiple row
 			$sql 	=	"select * from student_tran where stud_id=$stud_id order by t_id limit 3";
+			foreach($GLOBALS['db']->query($sql) as $row)
+			{
+    			echo "<tr>";
+    			echo "<td>".$row['tran_id']."</td>";
+    			echo "<td>".$row['amount']."</td>";
+    			echo "<td>".$row['paid_for']."</td>";
+    			echo "<td>".$row['time']."</td>";
+    			echo "</tr>";
+			}
+		}
+
+		function get_student_tran_total($stud_id)
+		{
+			//fetch all can fetch multiple row
+			$sql 	=	"select * from student_tran where stud_id=$stud_id order by t_id";
 			foreach($GLOBALS['db']->query($sql) as $row)
 			{
     			echo "<tr>";

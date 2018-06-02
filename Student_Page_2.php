@@ -21,6 +21,9 @@
   {
       var student_details   =  <?php echo json_encode(get_student_details($stud_id), JSON_PRETTY_PRINT);?>;
       var subject_details   =  <?php echo json_encode(get_subject_details($stud_id), JSON_PRETTY_PRINT);?>;
+      var picture_details   =  <?php echo json_encode(get_profile_picture($stud_id), JSON_PRETTY_PRINT);?>;
+
+      profile_image.src             =   picture_details['0']['pic_url'];
 
       full_name.innerHTML           =   student_details['0']['fname']+' '+student_details['0']['mname']+' '+student_details['0']['lname'];
       registration_number.innerHTML =   student_details['0']['stud_id'];
@@ -33,6 +36,16 @@
       subjects.innerHTML            =   subject_details['0']['sub_1']+' , '+subject_details['0']['sub_2']+' , '+subject_details['0']['sub_3']+' , '+subject_details['0']['sub_4']; 
 
   }
+
+  function redirect_profile()
+  {
+    window.open("profile.php", '_blank');
+  }
+  function redirect_transaction()
+  {
+    window.open("transaction.php",'_blank');
+  }
+
   </script>
   <body onload='onload_required_function();'>
 
@@ -53,10 +66,10 @@
 
                 <div class="col-lg-3 main-chart">
                   <div class="showback">
-                    <p class="centered"><img src="assets/img/ui-zac.jpg" class="img-circle" width="155"></p>
+                    <p class="centered"><img id="profile_image"  src="" width="210" height="155" alt="Profile Picture"></p>
                     <p class="centered">
-                      <button type="button" class="btn btn-default btn-xs btn-theme02">View Profile</button>
-                      <button type="button" class="btn btn-default btn-xs btn-theme03">Transaction History</button>
+                      <button type="button" class="btn btn-default btn-xs btn-theme02" onclick="redirect_profile();">View Profile</button>
+                      <button type="button" class="btn btn-default btn-xs btn-theme03" onclick="redirect_transaction();">Transaction History</button>
                     </p>
                   </div>
                 </div>
@@ -98,46 +111,41 @@
                               <td  colspan  = "2"><div id="fee"></div></td>
                           </tr>
                       </tbody>
-                      <!--Table body-->
-
                   </table>
-                  <!--Table-->
                   </div>
                 </div>
+              </div> 
+<!--
+*************************************************************************************************************************************************
+UPDATION OF INFORMATION WILL BE DONE HERE
+*************************************************************************************************************************************************  
+-->
+              <div class="showback">
+                <h4> Information Updation </h4>
 
-              </div>  
-           
-                
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#password">Password Update</button>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#contact">Contact Information Update</button>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#subject_info">Subject Information Update</button>
 
-
-              <div class="row mt">
-                <div class="col-lg-12 main-chart">
-                <div class="showback">
-                <h3><i class="fa fa-angle-right"></i>TRANSACTION HISTORY</h3><hr>
-
-                <table class="table table-bordered table-striped table-condensed">
-                              
-                              <thead style="background-color:#002b80; color:white;">
-                                <tr>
-                                    <th class="numeric">Order ID</th>
-                                    <th class="numeric">Amount</th>
-                                    <th class="numeric">Paid for</th>
-                                    <th class="numeric">Time</th>
-                                </tr>
-                              </thead>
-
-                              <tbody>
-
-                              <?php get_student_tran($stud_id); ?>
-                    
-                              </tbody>
-                          </table>
-                        
-
+                <div id="password" class="collapse">
+                    Pasword Updation Code will be put here
                 </div>
-                  </div>
-              </div>
 
+                <div id="contact" class="collapse">
+                    Personal Phone Number/Gardian Phone Number and Address Updation is put here
+                </div>
+
+                <div id="subject_info" class="collapse">
+                    Subject Information will be put here
+                </div>
+
+
+              </div> 
+<!--
+*************************************************************************************************************************************************
+UPDATION OF INFORMATION WILL END HERE
+*************************************************************************************************************************************************  
+-->
           </section>
       </section>
 

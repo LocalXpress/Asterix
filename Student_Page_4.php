@@ -23,60 +23,117 @@
     include 'script/side_nav.php';
   ?>
       
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
+<!-- 
+**********************************************************************************************************************************************************
+MAIN CONTENT
+***********************************************************************************************************************************************************
+ -->
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper">
+        <section class="wrapper">
+<!-- 
+**********************************************************************************************************************************************************
+MARKET PLACE
+***********************************************************************************************************************************************************
+ -->
+        <div class="row">
+          <div class="col-lg-12 main-chart">
+            <div class="showback">
+              <h4>Market Place</h4><hr>
 
-              <div class="row">
-                <div class="col-lg-12 main-chart">
-                  <h4>Class Schedule</h4><hr>
+          <! -- 3RD ROW OF PANELS -->
+          <!-- Product Panel -->
+          <div class="row">
 
-                  <div class="showback">
-                    <h5>Lecture Hall 1</h5>
-
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                      <span class="sr-only">40% Complete (success)</span>
-                      </div>
-                    </div>
-
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                      <span class="sr-only">40% Complete (success)</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="showback">
-                    <h5>Lecture Hall 2</h5>
-
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                      <span class="sr-only">40% Complete (success)</span>
-                      </div>
-                    </div>
-
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                      <span class="sr-only">40% Complete (success)</span>
-                      </div>
-                    </div>
-
-
-                  </div>                  
-
+            <div class="col-lg-4 col-md-4 col-sm-4 mb">
+              <div class="product-panel-2 pn">
+                <div class="badge badge-hot">HOT</div>
+                <img src="assets/img/product.jpg" width="200" alt="">
+                <h5 class="mt">Flat Pack Heritage</h5>
+                <h6>TOTAL SALES: 1388</h6>
+                <button class="btn btn-small btn-theme04">BUY</button>
               </div>
-          </section>
+            </div><! --/col-md-4 -->
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 mb">
+              <div class="product-panel-2 pn">
+                <div class="badge badge-hot">HOT</div>
+                <img src="assets/img/product.jpg" width="200" alt="">
+                <h5 class="mt">Flat Pack Heritage</h5>
+                <h6>TOTAL SALES: 1388</h6>
+                <button class="btn btn-small btn-theme04">BUY</button>
+              </div>
+            </div><! --/col-md-4 -->
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 mb">
+              <div class="product-panel-2 pn">
+                <div class="badge badge-hot">HOT</div>
+                <img src="assets/img/product.jpg" width="200" alt="">
+                <h5 class="mt">Flat Pack Heritage</h5>
+                <h6>TOTAL SALES: 1388</h6>
+                <button class="btn btn-small btn-theme04">BUY</button>
+              </div>
+            </div><! --/col-md-4 -->
+          
+          </div><! -- END 3RD ROW OF PANELS -->
+
+           <! -- 3RD ROW OF PANELS -->
+          <!-- Product Panel -->
+          <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4 mb">
+              <div class="product-panel-2 pn">
+                <div class="badge badge-hot">HOT</div>
+                <img src="assets/img/product.jpg" width="200" alt="">
+                <h5 class="mt">Flat Pack Heritage</h5>
+                <h6>TOTAL SALES: 1388</h6>
+                <button class="btn btn-small btn-theme04">BUY</button>
+              </div>
+            </div><! --/col-md-4 -->
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 mb">
+              <div class="product-panel-2 pn">
+                <div class="badge badge-hot">HOT</div>
+                <img src="assets/img/product.jpg" width="200" alt="">
+                <h5 class="mt">Flat Pack Heritage</h5>
+                <h6>TOTAL SALES: 1388</h6>
+                <button class="btn btn-small btn-theme04">BUY</button>
+              </div>
+            </div><! --/col-md-4 -->
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 mb">
+              <div class="product-panel-2 pn">
+                <div class="badge badge-hot">HOT</div>
+                <img src="assets/img/product.jpg" width="200" alt="">
+                <h5 class="mt">Flat Pack Heritage</h5>
+                <h6>TOTAL SALES: 1388</h6>
+                <button class="btn btn-small btn-theme04">BUY</button>
+              </div>
+            </div><! --/col-md-4 -->
+          
+          </div><! -- END 3RD ROW OF PANELS -->
+            </div>
+          </div>
+        </div>            
+<!-- 
+**********************************************************************************************************************************************************
+MAIN CONTENT
+***********************************************************************************************************************************************************
+ -->     
+              
+        </section>
       </section>
       <!--main content end-->
   </section>
-  <!-- 
-  **********************************************************************************************************************************************************
-    MAIN CONTENT end
-  *********************************************************************************************************************************************************** -->
+<!-- 
+**********************************************************************************************************************************************************
+MAIN CONTENT end
+*********************************************************************************************************************************************************** 
+-->
   <?php
   include 'script/tail_imp_file.php';
   include 'script/footer.php';

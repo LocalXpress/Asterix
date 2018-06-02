@@ -43,7 +43,7 @@ function info()
                   <li class="mt">
                       <a class="active" href="Student_Page_4.php">
                           <i class="fa fa-dashboard"></i>
-                          <span>Schedule</span>
+                          <span>Market Place</span>
                       </a>
                   </li>
 

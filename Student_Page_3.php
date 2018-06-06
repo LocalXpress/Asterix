@@ -6,12 +6,17 @@
       session_start();
       include 'script/head_imp_file.php';
       include 'php/function_2.php';
+      
+      if(!isset($_SESSION['stud_id']))
+        echo '<script>window.location="login.php"</script>';
+      
       $stud_id  =  $_SESSION['stud_id'];
 
+      if(!isset($stud_id))
+        echo '<script>window.location="login.php"</script>';
+
       if(isset($_POST['payment_confirm']))
-        {
-          payment_details_confirm($stud_id,$_POST['fee'],$_POST['paid_for']); 
-        }
+          payment_details_confirm($stud_id,$_POST['fee'],$_POST['paid_for']);
 
     ?>
   </head>
@@ -25,9 +30,15 @@
   {
     var student_details   =  <?php echo json_encode(get_student_details($stud_id), JSON_PRETTY_PRINT);?>;
     fee.value             =   student_details['0']['fee'];
+    card_fee.value        =   student_details['0']['fee'];
+    full_name_card.value  =   student_details['0']['fname']+' '+student_details['0']['mname']+' '+student_details['0']['lname'];
+    email_card.value      =   student_details['0']['email'];
+    phone_card.value      =   student_details['0']['g_phone'];
+
+
     payable.innerHTML     =   "Total Payable Amount: <b>"+student_details['0']['fee']+"</b>";
     ff_name.innerHTML     =   "Name: <b>"+student_details['0']['fname']+' '+student_details['0']['mname']+' '+student_details['0']['lname']+"</b>";
-    e_email.innerHTML       =   "Email: <b>"+student_details['0']['email']+"</b>";
+    e_email.innerHTML     =   "Email: <b>"+student_details['0']['email']+"</b>";
 
   }
   </script>
@@ -67,17 +78,61 @@
                     <form class="form-horizontal style-form" method="get">
                           <div class="form-group">
                               <div class="col-sm-6">
-                                <a href="Payment/PayUMoney_form.php"><button type="button" class="btn btn-primary btn-lg btn-block">Pay with Card</button></a>
+                                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#card_payment">Pay with Card</button>
                               </div>
 
                               <div class="col-sm-6">
-                                <button type="button" class="btn btn-info btn-lg btn-block"    data-toggle="collapse" data-target="#cash_payment">Pay with Cash</button>
+                                <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="collapse" data-target="#cash_payment">Pay with Cash</button>
                               </div>
                           </div>
                     </form>
 
                     <div id="card_payment" class="collapse">
-                      Card Payment will done here
+                      <form class="form-horizontal style-form" action="Payment/form_process.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+
+                          <div class="col-sm-3">
+                            Txn ID: <input type="text" name="txnid" value="<?php echo $txnid=time().rand(1000,99999); ?>" class="form-control" readonly/>
+                          </div>
+
+                          <div class="col-sm-3">
+                            Amount: <input type="text" name="amount" value="" id="card_fee" class="form-control" readonly/>
+                          </div>
+
+                          <div class="col-sm-3">
+                            Paying for: 
+                            <select class="form-control" name="productinfo">
+                              <option value="January">January</option>
+                              <option value="February">February</option>
+                              <option value="March">March</option>
+                              <option value="April">April</option>
+                              <option value="May">May</option>
+                              <option value="June">June</option>
+                              <option value="July">July</option>
+                              <option value="August">August</option>
+                              <option value="September">September</option>
+                              <option value="October">October</option>
+                              <option value="November">November</option>
+                              <option value="December">December</option>
+                            </select>
+                          </div>  
+                          <!--
+                          INVISIBLE PART OF THE INFORMATION  
+                          -->
+                          <input type="hidden"    name="firstname"    value=""        id="full_name_card"/>
+                          <input type="hidden"    name="email"        value=""        id="email_card"/>
+                          <input type="hidden"    name="phone"        value=""        id="phone_card"/>
+                          <!--ENTER THE FULL URL OF THE SUCCESS AND FAILURE PHP-->
+                          <input type="hidden"  name="surl"         value="/success.php"/>
+                          <input type="hidden"  name="furl"         value="/fail.php"/>
+
+                          <div class="col-sm-3">
+                            <br>
+                            <input  type="submit" class="btn btn-info btn-block"/>
+                          </div>
+
+                        </div>
+                      </form>
                     </div> 
 
                     <div id="cash_payment" class="collapse">
@@ -90,7 +145,7 @@
                               </div>
 
                               <div class="col-sm-3">
-                                <input type="text" class="form-control" placeholder="cost" value="" id="fee" name="fee" readonly>
+                                <input type="text" class="form-control" value="" id="fee" name="fee" readonly>
                               </div>
 
                               <div class="col-sm-3">

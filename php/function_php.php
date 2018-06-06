@@ -38,7 +38,8 @@
 				  ($stud_id)";
 				  $GLOBALS['db']->exec($sql);
 			//echo 'Student sub Table is updated successfully<br>';
-			header("location:./Student_Page_8.php?stud_id=".$stud_id); 
+			//header("location:./Student_Page_8.php?stud_id=".$stud_id); 
+			echo '<script>window.location="./Student_Page_8.php?stud_id='.$stud_id.'"</script>';
 			//Transaction table will be updated once the first payment is initiated!
 			//echo "Email: ".$email."Fname: ".$fname."Mname".$mname."Lname".$lname."password".$password;
 			return 1;
@@ -63,7 +64,8 @@
 										   sub_3		=	'$sub_3',
 										   sub_4		=	'$sub_4'	where stud_id=$stud_id";
 			$GLOBALS['db']->exec($sql);
-			header("location:./Student_Page_9.php?stud_id=".$stud_id);
+			//header("location:./Student_Page_9.php?stud_id=".$stud_id);
+			echo '<script>window.location="./Student_Page_9.php?stud_id='.$stud_id.'"</script>';
 		}
 		function registration_3($stud_id,$file)
 		{
@@ -77,7 +79,8 @@
 			$update_display_pic=$target_file;
 			$sql="update student_pic set pic_url='$update_display_pic' where stud_id=$stud_id";
 			$GLOBALS['db']->exec($sql);
-			header("location:./Student_Page_10.php?stud_id=".$stud_id);
+			//header("location:./Student_Page_10.php?stud_id=".$stud_id);
+			echo '<script>window.location="./Student_Page_10.php?stud_id='.$stud_id.'"</script>';
 		}
 
 		function registration_4($stud_id)

@@ -4,10 +4,12 @@
     <?php
       include 'script/head_imp_file.php';
       include 'php/function_php.php';
+      
+      if(!isset($_GET['stud_id']))
+        echo '<script>window.location="./Student_Page_7.php"</script>';
+      
       $stud_id=$_GET['stud_id'];
-      if(!isset($stud_id))
-        header("location:Student_Page_7.php");
-
+      
       //function is called from here!!!!
       if(isset($_POST['update_display_pic']))
         registration_3($stud_id,$_FILES);

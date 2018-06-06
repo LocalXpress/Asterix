@@ -4,9 +4,11 @@
   <?php
     include 'script/head_imp_file.php';
     include 'php/function_php.php';
+    
+    if(!isset($_GET['stud_id']))
+        echo '<script>window.location="./Student_Page_7.php"</script>';
+      
     $stud_id=$_GET['stud_id'];
-    if(!isset($stud_id))
-        header("location:Student_Page_7.php");
   ?>
     <style type="text/css">
      #payment_success
@@ -48,7 +50,7 @@
 
                     <h5>Registration Fees</h5><hr>
 
-                      <a href="Payment/PayUMoney_form.php"><button type="button" class="btn btn-primary btn-lg btn-block">Pay with Card</button></a>
+                      <a href="Payment/PayUMoney_form.php"><button type="button" class="btn btn-primary btn-lg btn-block">Pay with Card</button></a><br>
                       <button type="button" class="btn btn-info btn-lg btn-block"     onclick="cash_js();">Pay with Cash</button>
                       
                   </div>

@@ -4,10 +4,11 @@
     <?php
       include 'script/head_imp_file.php';
       include 'php/function_php.php';
-      $stud_id=$_GET['stud_id'];
       
-      if(!isset($stud_id))
-        header("location:Student_Page_7.php");
+      if(!isset($_GET['stud_id']))
+        echo '<script>window.location="./Student_Page_7.php"</script>';
+      
+      $stud_id=$_GET['stud_id'];
 
       if(isset($_POST['registration_step_2']))
         registration_2($stud_id,$_POST['moth_name'],$_POST['fath_name'],$_POST['g_phone'],$_POST['p_phone'],$_POST['board'],$_POST['school'],$_POST['class'],$_POST['teacher'],$_POST['sub_1'],$_POST['sub_2'],$_POST['sub_3'],$_POST['sub_4'],$_POST['addr'],$_POST['fee']);

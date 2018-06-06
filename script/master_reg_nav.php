@@ -11,9 +11,11 @@ TOP BAR CONTENT & NOTIFICATIONS
   <!--logo start-->
 <a href="index.html" class="logo"><b>ASTERIX GOLD</b></a>
   <div class="top-menu">
+  	<!--
     <ul class="nav pull-right top-menu">
-      <li><a class="logout" href="#">Quit</a></li>
+      <li><a class="logout" href="">Quit</a></li>
     </ul>
+	-->
   </div>
 </header>
 <!--header end-->

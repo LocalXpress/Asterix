@@ -75,7 +75,7 @@
 
 		function payment_details_confirm($stud_id,$amount,$paid_for)
 		{
-			$txnid  = substr(hash('sha256', mt_rand() . microtime()), 0, 10);
+			$txnid  = time().rand(1000,99999);
 			$sql	= "insert into student_tran (tran_id,stud_id,amount,paid_for) values
 												('$txnid',$stud_id,$amount,'$paid_for')";	
 			$GLOBALS['db']->exec($sql);

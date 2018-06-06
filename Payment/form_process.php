@@ -20,10 +20,6 @@ if(!isset($_POST['firstname'])){header("location: index.php");}
 	$furl =$_POST['furl'];
 	$hashseq=$MERCHANT_KEY.'|'.$txnid.'|'.$amount.'|'.$productinfo.'|'.$firstname.'|'.$email.'|||||||||||'.$SALT;
 	$hash =strtolower(hash("sha512", $hashseq));
-
-	echo $firstname.' '.$email.' '.' '.$productinfo.' '.$amount.' '.$txnid; 
-	
-
 ?>
 
 

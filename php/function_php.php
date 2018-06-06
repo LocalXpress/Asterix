@@ -1,14 +1,6 @@
 <?php
-	try 
-		{ 
-			$db = new PDO("mysql:dbname=asterix_gold;host=localhost", "root", "" );
-			//echo 'Hello I am conneted!!';
-		}
-	catch(PDOException $e)
-		{ 
-			alert($e->getMessage());
-		}//db connection which is common for every page.
-
+		require_once 'config.php';
+		
 		//function for registration in the first page
 		function registration_1($email,$fname,$mname,$lname,$password)
 		{

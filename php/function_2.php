@@ -1,14 +1,6 @@
 <?php
-	try 
-		{ 
-			$db = new PDO("mysql:dbname=asterix_gold;host=localhost", "root", "" );
-			//echo 'Hello I am conneted!!';
-		}
-	catch(PDOException $e)
-		{ 
-			alert($e->getMessage());
-		}//db connection which is common for every page.
-
+	require_once 'config.php';
+	
 		function get_student_details($stud_id)
 		{
 			//fetch all can fetch multiple row

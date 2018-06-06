@@ -8,12 +8,9 @@
       include 'php/function_2.php';
       
       if(!isset($_SESSION['stud_id']))
-        echo '<script>window.location="login.php"</script>';
+        echo '<script>window.location="index.php"</script>';
       
       $stud_id  =  $_SESSION['stud_id'];
-
-      if(!isset($stud_id))
-        echo '<script>window.location="login.php"</script>';
 
       if(isset($_POST['payment_confirm']))
           payment_details_confirm($stud_id,$_POST['fee'],$_POST['paid_for']);

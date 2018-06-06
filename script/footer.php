@@ -9,7 +9,7 @@
 <!--footer start-->
     <footer class="site-footer">
         <p class="centered">
-            &copy;
+            &copy; Swaroop Acharjee 2018
         </p>
     </footer>
 <!--footer end-->

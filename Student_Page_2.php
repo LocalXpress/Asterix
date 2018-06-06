@@ -9,7 +9,7 @@
       
 
       if(!isset($_SESSION['stud_id']))
-        echo '<script>window.location="login.php"</script>';
+        echo '<script>window.location="index.php"</script>';
       
       $stud_id  =  $_SESSION['stud_id'];
 

@@ -48,8 +48,9 @@
 
                     <h5>Registration Fees</h5><hr>
 
-                      <button type="button" class="btn btn-primary btn-lg btn-block"  onclick="cash_ss();" disabled>Pay with Card</button>
+                      <a href="Payment/PayUMoney_form.php"><button type="button" class="btn btn-primary btn-lg btn-block">Pay with Card</button></a>
                       <button type="button" class="btn btn-info btn-lg btn-block"     onclick="cash_js();">Pay with Cash</button>
+                      
                   </div>
 
                   <div class="showback" id="cash_admin" style="display:none;">

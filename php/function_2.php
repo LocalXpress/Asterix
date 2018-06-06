@@ -39,7 +39,7 @@
 		function get_student_tran($stud_id)
 		{
 			//fetch all can fetch multiple row
-			$sql 	=	"select * from student_tran where stud_id=$stud_id order by t_id limit 3";
+			$sql 	=	"select * from student_tran where stud_id=$stud_id order by t_id desc limit 3";
 			foreach($GLOBALS['db']->query($sql) as $row)
 			{
     			echo "<tr>";
@@ -54,7 +54,7 @@
 		function get_student_tran_total($stud_id)
 		{
 			//fetch all can fetch multiple row
-			$sql 	=	"select * from student_tran where stud_id=$stud_id order by t_id";
+			$sql 	=	"select * from student_tran where stud_id=$stud_id order by t_id desc";
 			foreach($GLOBALS['db']->query($sql) as $row)
 			{
     			echo "<tr>";
@@ -64,5 +64,20 @@
     			echo "<td>".$row['time']."</td>";
     			echo "</tr>";
 			}
+		}
+
+		function update_password($stud_id,$n_password,$c_password)
+		{
+			$sql="update student_basic	set password 	=	'$n_password'
+										where stud_id=$stud_id";
+			$GLOBALS['db']->exec($sql);
+		}
+
+		function payment_details_confirm($stud_id,$amount,$paid_for)
+		{
+			$txnid  = substr(hash('sha256', mt_rand() . microtime()), 0, 10);
+			$sql	= "insert into student_tran (tran_id,stud_id,amount,paid_for) values
+												('$txnid',$stud_id,$amount,'$paid_for')";	
+			$GLOBALS['db']->exec($sql);
 		}
 ?>

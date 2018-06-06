@@ -7,6 +7,10 @@
       include 'script/head_imp_file.php';
       include 'php/function_2.php';
       $stud_id  =  $_SESSION['stud_id'];
+
+      if(isset($_POST['update_password']))
+        update_password($stud_id,$_POST['n_password'],$_POST['c_password']);
+
   ?>
   </head>
   <script type="text/javascript">
@@ -124,11 +128,28 @@ UPDATION OF INFORMATION WILL BE DONE HERE
                 <h4> Information Updation </h4>
 
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#password">Password Update</button>
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#contact">Contact Information Update</button>
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#subject_info">Subject Information Update</button>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#contact" disabled>Contact Information Update</button>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#subject_info" disabled>Subject Information Update</button>
 
                 <div id="password" class="collapse">
-                    Pasword Updation Code will be put here
+                  <form class="form-horizontal style-form" action="" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                      
+                      <div class="col-sm-4" style="margin-top:1%;">
+                        <input type="password" class="form-control" placeholder="New Password"  id="n_password"        name="n_password"     value=""/>
+                      </div>
+
+                      <div class="col-sm-4" style="margin-top:1%;">
+                        <input type="password" class="form-control" placeholder="Confirm Password"  id="c_password"        name="c_password"     value=""/>
+                      </div>
+
+                      <div class="col-sm-4" style="margin-top:1%;">
+                        <input type="reset" class="btn btn-default"   value="RESET"/>
+                        <input type="submit" class="btn btn-primary"  value="UPDATE" id="submit" name="update_password"/>
+                      </div>
+
+                    </div>
+                  </form>
                 </div>
 
                 <div id="contact" class="collapse">

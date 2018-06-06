@@ -8,12 +8,27 @@
       include 'php/function_2.php';
       $stud_id  =  $_SESSION['stud_id'];
 
+      if(isset($_POST['payment_confirm']))
+        {
+          payment_details_confirm($stud_id,$_POST['fee'],$_POST['paid_for']); 
+        }
+
     ?>
   </head>
   <script type="text/javascript">
   function onload_required_function()
   {
     info();
+    information();
+  }
+  function information()
+  {
+    var student_details   =  <?php echo json_encode(get_student_details($stud_id), JSON_PRETTY_PRINT);?>;
+    fee.value             =   student_details['0']['fee'];
+    payable.innerHTML     =   "Total Payable Amount: <b>"+student_details['0']['fee']+"</b>";
+    ff_name.innerHTML     =   "Name: <b>"+student_details['0']['fname']+' '+student_details['0']['mname']+' '+student_details['0']['lname']+"</b>";
+    e_email.innerHTML       =   "Email: <b>"+student_details['0']['email']+"</b>";
+
   }
   </script>
   <body onload='onload_required_function();'>
@@ -39,23 +54,71 @@
                 <div class="col-lg-12 main-chart">
                   <div class="showback">
                     <h4>Pay Your Fees</h4><hr>
-                    Name: <b>Swaroop Acharjee</b><br>
-                    Payable Amount: <b>Rs. 1000.00</b>(Total fees is calculated together for all the subject)<br>
+
+                    <div class="alert alert-info">
+                      <div class="col-sm-4"><div id="ff_name"></div></div>
+                      <div class="col-sm-4"><div id="e_email"></div></div>
+                      <div class="col-sm-4"><div id="payable"></div></div>
+                      <br>
+                    </div>
+                    
                     <br>
                     <div class="alert alert-warning"><b>Warning!</b> Check the information and Proceed to payment only if the information is correct!</div>
                     <form class="form-horizontal style-form" method="get">
                           <div class="form-group">
-                              <div class="col-sm-5">
-                                  <input type="email" class="form-control" placeholder="Registered Email ID">
+                              <div class="col-sm-6">
+                                <a href="Payment/PayUMoney_form.php"><button type="button" class="btn btn-primary btn-lg btn-block">Pay with Card</button></a>
                               </div>
-                              <div class="col-sm-5">
-                                  <input type="password" class="form-control" placeholder="Password">
-                              </div>
-                              <div class="col-sm-2">
-                                  <button type="button" class="btn btn-info">Pay</button>
+
+                              <div class="col-sm-6">
+                                <button type="button" class="btn btn-info btn-lg btn-block"    data-toggle="collapse" data-target="#cash_payment">Pay with Cash</button>
                               </div>
                           </div>
                     </form>
+
+                    <div id="card_payment" class="collapse">
+                      Card Payment will done here
+                    </div> 
+
+                    <div id="cash_payment" class="collapse">
+                    <!--THIS PART IS TO BE DONE USING POST SESSIONS-->
+                      <form class="form-horizontal style-form" action="" method="post" enctype="multipart/form-data">
+                          <div class="form-group">
+                              
+                              <div class="col-sm-3">
+                                  <input type="password" class="form-control" placeholder="Admin Password" id="admin_password" required>
+                              </div>
+
+                              <div class="col-sm-3">
+                                <input type="text" class="form-control" placeholder="cost" value="" id="fee" name="fee" readonly>
+                              </div>
+
+                              <div class="col-sm-3">
+                                  <select class="form-control" id="paid_for" name="paid_for">
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                  </select>
+                              </div>
+
+                              <div class="col-sm-3">
+                                  <input  type="submit" id="submit" name="payment_confirm" value="Confirm" class="btn btn-info btn-block"/>
+                              </div>
+
+                          </div>
+                      </form>
+
+                    </div> 
+
                   </div>
             <!--
             ********************************************************************************************************************************************************
@@ -97,7 +160,6 @@
             </div>
           </section>
       </section>
-
       <!--main content end-->
   </section>
   <?php

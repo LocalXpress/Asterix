@@ -88,6 +88,9 @@
 	<center><h2>*Asterix Education</h2></center>
 	<hr>
 	<h4>Student Profile</h4>
+  <div class="alert alert-success">
+    Press ctlr+P to print or just save as PDF!!!
+  </div>
 	<table>
 		<tr>
 			<td rowspan="6"><img id="profile_image" src=""/></td>
